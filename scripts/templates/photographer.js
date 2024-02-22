@@ -8,7 +8,8 @@ function photographerTemplate(data) {
         const titleH3 = document.createElement( 'h3' );
         titleH3.textContent= price;
         const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
+        img.setAttribute("src", portrait)
+        img.textContent=portrait;
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
         article.appendChild(img);
@@ -16,5 +17,5 @@ function photographerTemplate(data) {
         article.appendChild(titleH3);
         return (article);
     }
-    return { name, picture, price, getUserCardDOM }
+    return { name, picture, price, picture, portrait, getUserCardDOM }
 }
