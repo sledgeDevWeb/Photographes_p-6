@@ -3,9 +3,12 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    
 }
 
-
+#main{
+    margin-bottom: 100px;
+}
 header {
     display: flex;
     flex-direction: row;
@@ -39,12 +42,38 @@ h1 {
     flex-direction: column;
 }
 
+
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+}
+.photographer_section article p {
+    color: #D3573C;
+    font-family: DM Sans;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;    
+    
+}
+.photographer_section article h3 {
+    color: #000000;
+    font-family: DM Sans;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: center;
+      
+    
+}
+.photographer_section article span {
+    color: #909090;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 100%;
 }
