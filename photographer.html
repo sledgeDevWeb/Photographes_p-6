@@ -1,47 +1,73 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						
-						<input />
-						<label>Nom</label>
-						
-						<input />
-						<label>Email</label>
-						
-						<input type="email" />
-						<label>Message</label>
-						
-						<textarea name="" class="contactform" cols="100" rows="20"></textarea>
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <title>FishEye</title>
+</head>
+<body>
+<header class="header hide">
+  <a href="" class="header__home" aria-label="Fisheye Home page">
+    <img src="img/logo.png" class="header__home__logo" alt="Fisheye Home page">
+  </a>
+</header>
+<main class="photographer hide">
+  <!-- Afficher les informations du photographe -->
+</main>
+<aside class="sort hide">
+  <label for="sortSelect" class="sort__text">Trier par</label>
+  <select id="sortSelect" class="btn">
+    <option value="byPopularity">Popularité</option>
+    <option value="byDate">Date</option>
+    <option value="byTitle">Titre</option>
+  </select>
+</aside>
+<section class="gallery hide">
+  <!-- Afficher les médias du photographe -->
+</section>
+<article class="lightbox" aria-label="image closeup view">
+  <!--   Afficher les médias dans une lightbox-->
+</article>
+<section class="like__counter hide">
+  <aside class="counter">
+    <!-- Afficher le compteur de likes -->
+  </aside>
+  <aside class="price">
+    <!-- Afficher le tarif -->
+  </aside>
+</section>
+<!--Début de la modale-->
+<section class="bground">
+  <div class="modal-body">
+    <svg class="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+      <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+    </svg>
+    <form name="send-message" action="" method="get">
+      <section class="formDataRemove" tabindex="0">
+        <p class="message__photographer">Contactez-moi</p>
+        <p id="message-id" class="message__photographer"></p>
+        <label for="first">Prénom</label><br>
+        <input class="text-control" type="text" id="first" name="First name" tabindex="1"><br>
+        <label for="last">Nom</label><br>
+        <input class="text-control" type="text" id="last" name="Last name" tabindex="2"><br>
+        <label for="email">Email</label><br>
+        <input class="text-control" type="email" id="email" name="Email" tabindex="3"><br>
+        <label for="message">Votre message</label><br>
+        <textarea class="text-control bloc-message" type="text" id="message" name="Votre message" tabindex="4"></textarea>
+      </section>
+      <input id="btn-submit" type="submit" class="btn modal-btn" value="Envoyer" tabindex="5">
+    </form>
+  </div>
+</section>
+<script type="module" src="./scripts/js/photographer.js"></script>
+<script type="module" src="./scripts/js/function.js"></script>
+<script type="module" src="./scripts/js/templates/mediaFactory.js"></script>
+</body>
 </html>
