@@ -25,20 +25,20 @@ export function mediaTemplate(medias, photo) {
         let img
         const index = medias.indexOf(photo)
         if (photo.video) {
-            const video = document.createElement('ourmedia')
+            const video = document.createElement('video')
             const source = document.createElement('source')
-            ourmedia.className = 'gallery__photo__card__container__img'
+            video.className = 'gallery__photo__card__container__img'
             source.setAttribute('src', `${photo.video}`)
-            source.setAttribute('type', 'ourmedia/mp4')
+            source.setAttribute('type', 'video/mp4')
             source.setAttribute('tabindex', 0)
             source.setAttribute('alt', `${photo.title}`)
             video.appendChild(source)
-            divGalleryContain.appendChild(ourmedia)
-            ourmedia.addEventListener('click', () => {
+            divGalleryContain.appendChild(video)
+            video.addEventListener('click', () => {
                 hiddenOnClick(index)()
             })
             // Ouvrir la lightbox avec la touche enter
-            ourmedia.addEventListener('keydown', (event) => {
+            video.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
                     hiddenOnClick(index)()
                 }
