@@ -1,17 +1,6 @@
-@charset "UTF-8";
-/* Design System */
+
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
-/* Modules */
-/* Colors */
-/* Text configuration */
-/*36px*/
-/*13px*/
-/*10px*/
-/*9px*/
-/* Photographer page */
-/*64px*/
-/*24px*/
-/*18px*/
+
 .hide.inactive {
   display: none;
 }
@@ -199,17 +188,7 @@
   font-weight: 400;
 }
 
-/* Colors */
-/* Text configuration */
-/*36px*/
-/*13px*/
-/*10px*/
-/*9px*/
-/* Photographer page */
-/*64px*/
-/*24px*/
-/*18px*/
-/* Règles liées au Javascript */
+
 .error {
   border: 2px solid red;
 }
@@ -284,16 +263,7 @@
   margin: 1.2rem 0 1.5rem 0;
 }
 
-/* Colors */
-/* Text configuration */
-/*36px*/
-/*13px*/
-/*10px*/
-/*9px*/
-/* Photographer page */
-/*64px*/
-/*24px*/
-/*18px*/
+
 * {
   margin: 0;
   padding: 0;
@@ -406,4 +376,4 @@ h1 {
   font-weight: 400;
 }
 
-/*# sourceMappingURL=main.css.map */
+

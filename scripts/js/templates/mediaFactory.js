@@ -1,4 +1,4 @@
-import {showCounter} from '../function.js'
+
 import {showLightbox} from '../photographer.js'
 
 export function mediaTemplate(medias, photo) {
@@ -25,20 +25,20 @@ export function mediaTemplate(medias, photo) {
         let img
         const index = medias.indexOf(photo)
         if (photo.video) {
-            const video = document.createElement('video')
+            const video = document.createElement('ourmedia')
             const source = document.createElement('source')
-            video.className = 'gallery__photo__card__container__img'
+            ourmedia.className = 'gallery__photo__card__container__img'
             source.setAttribute('src', `${photo.video}`)
-            source.setAttribute('type', 'video/mp4')
+            source.setAttribute('type', 'ourmedia/mp4')
             source.setAttribute('tabindex', 0)
             source.setAttribute('alt', `${photo.title}`)
             video.appendChild(source)
-            divGalleryContain.appendChild(video)
-            video.addEventListener('click', () => {
+            divGalleryContain.appendChild(ourmedia)
+            ourmedia.addEventListener('click', () => {
                 hiddenOnClick(index)()
             })
             // Ouvrir la lightbox avec la touche enter
-            video.addEventListener('keydown', (event) => {
+            ourmedia.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
                     hiddenOnClick(index)()
                 }

@@ -1,5 +1,4 @@
-// ctrl alt L pour formater
-// ctrl alt maj J pour sélectionner les caractères identiques
+
 
 // Import du modèle de photographe depuis le fichier photographersFactory.js
 import { photographerTemplate } from './templates/photographersFactory.js'
