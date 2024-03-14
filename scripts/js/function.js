@@ -54,7 +54,39 @@ export function showModal(photographer) {
       launchModal()
     }
   })
+  // Fermer la modal avec la touche Echap
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modalbg.style.display === 'block') {
+      modalbg.style.display = 'none'
+    }
+  })
+  // Navigation à travers les champs du formulaire avec les flèches haut et bas
+  document.addEventListener('keydown', (event) => {
+    // Vérifie si la modal est actuellement ouverte
+    if (modalbg.style.display === 'block') {
+      // Elément qui a le focus actuel
+      const focusedElement = document.activeElement
 
+      // Vérifie si la touche flèche haut ou bas est utilisée
+      if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        event.preventDefault()
+
+        // Sélectionner tous les champs du formulaire et le bouton submit
+        const formFields = document.querySelectorAll('.text-control, textarea, .modal-btn')
+
+        // Trouver l'index du champ actuellement focus en convertissant la NodeList en tableau
+        // et trouve l'index de l'élément actuellement en focus dans le tableau
+        const currentIndex = Array.from(formFields).indexOf(focusedElement)
+
+        // Calculer le nouvel index en fonction de la flèche
+        const newIndex =
+          event.key === 'ArrowUp' ? Math.max(0, currentIndex - 1) : Math.min(formFields.length - 1, currentIndex + 1)
+
+        // Définir le focus sur le nouveau champ ou le bouton submit
+        formFields[newIndex].focus()
+      }
+    }
+  })
 // launch modal event
   modalBtn.addEventListener('click', launchModal)
 

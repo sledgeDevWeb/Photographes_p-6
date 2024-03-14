@@ -1,5 +1,4 @@
-// ctrl alt L pour formater
-// ctrl alt maj J pour sélectionner les caractères identiques
+
 import { showPhotographer, showPrice, showCounter, showModal } from './function.js'
 import { mediaTemplate } from './templates/mediaFactory.js'
 
@@ -68,35 +67,7 @@ function showMedia(medias) {
     }
 }
 
-// Fonction de tri
-function showSortMedia(myMedia) {
-    // créer les fonctions de tri
-    document.getElementById('sortSelect').addEventListener('change', (event) => {
-        filterMedia(event.target.value)
-    })
 
-    // Fonction de tri des médias
-    function filterMedia(criteria) {
-
-        switch (criteria) {
-            case 'byTitle':
-                myMedia.sort((a, b) => a.title.localeCompare(b.title))
-                break
-            case 'byPopularity':
-                myMedia.sort((a, b) => b.likes - a.likes)
-                break
-            case 'byDate':
-                myMedia.sort((a, b) => new Date(b.date) - new Date(a.date))
-                break
-            default:
-                // Par défaut, utilise le tri par titre
-                myMedia.sort((a, b) => a.title.localeCompare(b.title))
-        }
-        // Affiche les médias triés
-        showMedia(myMedia)
-    }
-    filterMedia('byPopularity')
-}
 
 // Fonction qui affiche la lightbox
 export function showLightbox(medias, index) {
