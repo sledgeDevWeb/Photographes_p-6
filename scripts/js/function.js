@@ -176,7 +176,7 @@ export function showModal(photographer) {
       form.style.display = 'none'
       modalbg.style.display = 'none'
       form.style.display = 'block'
-      console.log('Votre message a été envoyé')
+      alert('Votre message a été envoyé')
 
     } else {
       console.log('Certains champs ne sont pas valides')

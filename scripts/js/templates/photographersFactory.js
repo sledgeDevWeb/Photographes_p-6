@@ -1,4 +1,5 @@
 // Fonction qui crée un modèle de photographe à partir des données fournies
+
 export function photographerTemplate(photographer) {
   // Méthode pour obtenir l'élément DOM représentant le photographe
   function getPhotographerDOM() {

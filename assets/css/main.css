@@ -290,6 +290,7 @@ h1 {
   width: 10.6rem;
   height: 4.375rem;
   cursor: pointer;
+  padding-left: 8px;
 }
 
 .header {
@@ -362,17 +363,17 @@ h1 {
 }
 .hero__photograph__text__city {
   color: #901C1C;
-  font-size: 0.813rem;
+  font-size: 0.913rem;
   font-weight: 400;
 }
 .hero__photograph__text__tagline {
   color: #000000;
-  font-size: 0.625rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 .hero__photograph__text__price {
   color: #757575;
-  font-size: 0.563rem;
+  font-size: 0.9rem;
   font-weight: 400;
 }
 

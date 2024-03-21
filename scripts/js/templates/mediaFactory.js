@@ -84,7 +84,54 @@ export function mediaTemplate(medias, photo) {
         iGalleryHeart.setAttribute('aria-label', 'Bouton likes')
         iGalleryHeart.setAttribute('tabindex', 0)
 
-       
+        iGalleryHeart.addEventListener('click', () => {
+            let sommeX =+ document.querySelector('.counter__text__number').textContent
+            if (canLike) {
+                // incrémente un like
+                pGalleryNumber.textContent++
+                // incrémente un like au compteur de like : showCounter
+                sommeX++
+                console.log(sommeX)
+                // modifie le coeur en coeur plein
+                iGalleryHeart.className += 'gallery__photo__card__info__like__heart fa-solid fa-heart'
+                // appel de l'UPDATE
+                showCounter(sommeX)
+                canLike = false
+            } else {
+                // décrémente un like
+                pGalleryNumber.textContent--
+                // décrémente un like au compteur de like : showCounter
+                sommeX--
+                // modifie le coeur en coeur vide
+                iGalleryHeart.classList.remove('fa-solid')
+                iGalleryHeart.classList.add('fa-regular')
+                // appel de l'UPDATE
+                showCounter(sommeX)
+                canLike = true
+            }
+        })
+        // Ajouter et enlever des likes avec la touche enter
+        let isHeartFilled = false // Variable pour suivre l'état du coeur
+        iGalleryHeart.addEventListener('keydown', (event) => {
+            let sommeX =+ document.querySelector('.counter__text__number').textContent
+            if (event.key === 'Enter') {
+                if (!isHeartFilled) {
+                    // Ajouter un like (coeur plein)
+                    pGalleryNumber.textContent++
+                    sommeX++
+                    iGalleryHeart.classList.add('fa-solid')
+                    isHeartFilled = true
+                } else {
+                    // Retirer un like (coeur vide)
+                    pGalleryNumber.textContent--
+                    sommeX--
+                    iGalleryHeart.classList.remove('fa-solid')
+                    isHeartFilled = false
+                }
+                // Appel de l'UPDATE
+                showCounter(sommeX)
+            }
+        })
 
         divGalleryInfo.appendChild(pGalleryName)
         divGalleryInfo.appendChild(divGalleryLike)
