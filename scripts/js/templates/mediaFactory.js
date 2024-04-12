@@ -1,4 +1,4 @@
-
+import {showCounter} from '../function.js'
 import {showLightbox} from '../photographer.js'
 
 export function mediaTemplate(medias, photo) {
@@ -85,7 +85,7 @@ export function mediaTemplate(medias, photo) {
         iGalleryHeart.setAttribute('tabindex', 0)
 
         iGalleryHeart.addEventListener('click', () => {
-            let sommeX =+ document.querySelector('.counter__text__number').textContent
+            let sommeX = +document.querySelector('.counter__text__number').textContent
             if (canLike) {
                 // incrémente un like
                 pGalleryNumber.textContent++
@@ -113,7 +113,7 @@ export function mediaTemplate(medias, photo) {
         // Ajouter et enlever des likes avec la touche enter
         let isHeartFilled = false // Variable pour suivre l'état du coeur
         iGalleryHeart.addEventListener('keydown', (event) => {
-            let sommeX =+ document.querySelector('.counter__text__number').textContent
+            let sommeX = +document.querySelector('.counter__text__number').textContent
             if (event.key === 'Enter') {
                 if (!isHeartFilled) {
                     // Ajouter un like (coeur plein)
